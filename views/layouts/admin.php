@@ -10,10 +10,10 @@ use yii\bootstrap5\Html;
 use yii\bootstrap5\Nav;
 use yii\bootstrap5\NavBar;
 
-AppAsset::register($this);
-
 $this->title = 'IT Club News';
 Yii::$app->name = 'IT Club News';
+
+AppAsset::register($this);
 
 $this->registerCsrfMetaTags();
 $this->registerMetaTag(['charset' => Yii::$app->charset], 'charset');
@@ -51,9 +51,11 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                 echo Nav::widget([
                     'options' => ['class' => 'navbar-nav'],
                     'items' => [
-                        ['label' => 'Science', 'url' => ['/site/index']],
-                        ['label' => 'Education', 'url' => ['/site/index']],
-                        ['label' => 'Trends', 'url' => ['/site/index']],
+                        ['label' => 'User', 'url' => ['/admin/user']],
+                        ['label' => 'Home', 'url' => ['/admin/default/index']],
+                        ['label' => 'Article', 'url' => ['/admin/article']],
+                        ['label' => 'Comment', 'url' => ['/admin/comment']],
+                        ['label' => 'Topic', 'url' => ['/admin/topic']],
                     ]
                 ]);
             ?>
