@@ -8,6 +8,7 @@ use yii\web\Controller;
 use yii\web\Response;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
+use app\models\BlogLoginForm;
 use app\models\ContactForm;
 
 class SiteController extends Controller
@@ -75,12 +76,11 @@ class SiteController extends Controller
             return $this->goHome();
         }
 
-        $model = new LoginForm();
+        $model = new BlogLoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
             return $this->goBack();
         }
 
-        $model->password = '';
         return $this->render('login', [
             'model' => $model,
         ]);
