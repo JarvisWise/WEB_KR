@@ -44,4 +44,9 @@ class Topic extends \yii\db\ActiveRecord
             'name' => 'Name',
         ];
     }
+
+    public static function getNameById($id) {
+        $topic_ = new static(Topic::find()->where(['id' => $id])->one());
+        return $topic_->name;
+    }
 }

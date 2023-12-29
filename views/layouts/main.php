@@ -31,7 +31,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
 </head>
 
 <style>
-    #w0-collapse {
+    .collapse.navbar-collapse {
         display: flex;
         justify-content: space-between;
     }
@@ -51,9 +51,9 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                 echo Nav::widget([
                     'options' => ['class' => 'navbar-nav'],
                     'items' => [
-                        ['label' => 'Science', 'url' => ['/site/index']],
-                        ['label' => 'Education', 'url' => ['/site/index']],
-                        ['label' => 'Trends', 'url' => ['/site/index']],
+                        ['label' => 'Science', 'url' => ['/site/science']],
+                        ['label' => 'Education', 'url' => ['/site/education']],
+                        ['label' => 'Trends', 'url' => ['/site/trends']],
                     ]
                 ]);
             ?>

@@ -31,7 +31,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
 </head>
 
 <style>
-    #w0-collapse {
+    .collapse.navbar-collapse {
         display: flex;
         justify-content: space-between;
     }
@@ -51,8 +51,9 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                 echo Nav::widget([
                     'options' => ['class' => 'navbar-nav'],
                     'items' => [
+                        //['label' => 'Home', 'url' => ['/admin/default/index']],
+                        ['label' => 'Home', 'url' => [Yii::$app->homeUrl]],
                         ['label' => 'User', 'url' => ['/admin/user']],
-                        ['label' => 'Home', 'url' => ['/admin/default/index']],
                         ['label' => 'Article', 'url' => ['/admin/article']],
                         ['label' => 'Comment', 'url' => ['/admin/comment']],
                         ['label' => 'Topic', 'url' => ['/admin/topic']],

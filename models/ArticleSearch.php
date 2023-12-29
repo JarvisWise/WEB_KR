@@ -69,4 +69,77 @@ class ArticleSearch extends Article
 
         return $dataProvider;
     }
+
+
+    /**
+     * @return ActiveDataProvider
+     */
+    public function searchByTopic($params, $topic_id){
+        if (null == Article::find()->where(['topic_id' => $topic_id])) {
+            return null;
+        }
+
+        $query = Article::find()->where(['topic_id' => $topic_id]);
+        $dataProvider = new ActiveDataProvider([
+            'query' => $query,
+        ]);
+
+        $this->load($params);
+        if (!$this->validate()) {
+            return $dataProvider;
+        }
+
+        $query->andFilterWhere([
+            'id' => $this->id,
+        ]);
+        return $dataProvider;
+    }
+
+    /**
+     * @return ActiveDataProvider
+     */
+    public function searchById($params, $article_id){
+        if (null == Article::find()->where(['id' => $article_id])) {
+            return null;
+        }
+
+        $query = Article::find()->where(['id' => $article_id]);
+        $dataProvider = new ActiveDataProvider([
+            'query' => $query,
+        ]);
+
+        $this->load($params);
+        if (!$this->validate()) {
+            return $dataProvider;
+        }
+
+        $query->andFilterWhere([
+            'id' => $this->id,
+        ]);
+        return $dataProvider;
+    }
+
+    /**
+     * @return ActiveDataProvider
+     */
+    public function searchAll($params){
+        if (null == Article::find()->all()) {
+            return null;
+        }
+
+        $query = Article::find();
+        $dataProvider = new ActiveDataProvider([
+            'query' => $query,
+        ]);
+
+        $this->load($params);
+        if (!$this->validate()) {
+            return $dataProvider;
+        }
+
+        $query->andFilterWhere([
+            'id' => $this->id,
+        ]);
+        return $dataProvider;
+    }
 }

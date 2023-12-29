@@ -57,12 +57,6 @@ class BlogLoginForm extends Model
      */
     public function login() {
         if ($this->validate()) {
-            //log
-            //$logs = new Logs();
-            //$logs->log_text = $this->getUser()->email.$this->getUser()->password;
-            //$logs->log_text = '$this->getUser()->email';
-            //$logs->save();
-            //log
             return Yii::$app->user->login($this->getUser(), $this->rememberMe ? 3600*24*30 : 0);
         }
         return false;

@@ -37,8 +37,6 @@ class Article extends \yii\db\ActiveRecord
             [['date'], 'date', 'format'=>'php:Y-m-d'],
             [['date'], 'default', 'value'=>date('Y-m-d')],
             [['topic_id', 'user_id'], 'integer'],
-            //[['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_id' => 'id']],
-            //[['topic_id'], 'exist', 'skipOnError' => true, 'targetClass' => Topic::className(), 'targetAttribute' => ['topic_id' => 'id']],
         ];
     }
 
@@ -81,5 +79,17 @@ class Article extends \yii\db\ActiveRecord
             return '/uploads/' . $this->image_path;
         }
         return '/no-image.png';
+    }
+
+    public static function contentPreview($inputString, $limit = 500){
+        $inputString = strip_tags($inputString);
+        $inputString = preg_replace('/\s+|&nbsp;/', ' ', $inputString);
+        return preg_match('#^(.{' . $limit . ',}?)\s+#su', $inputString, $match)
+            ? $match[1] . '...' : $inputString;
+    }
+
+    public static function getArticleById($id) {
+        $article_ = new static(Article::find()->where(['id' => $id])->one());
+        return $article_;
     }
 }

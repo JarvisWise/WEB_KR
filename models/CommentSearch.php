@@ -70,4 +70,28 @@ class CommentSearch extends Comment
 
         return $dataProvider;
     }
+
+    /**
+     * @return ActiveDataProvider
+     */
+    public function searchByArticleId($params, $article_id){
+        if (null == Comment::find()->where(['article_id' => $article_id])) {
+            return null;
+        }
+
+        $query = Comment::find()->where(['article_id' => $article_id])->addOrderBy(['id'=> SORT_ASC]);
+        $dataProvider = new ActiveDataProvider([
+            'query' => $query,
+        ]);
+
+        $this->load($params);
+        if (!$this->validate()) {
+            return $dataProvider;
+        }
+
+        $query->andFilterWhere([
+            'id' => $this->id,
+        ]);
+        return $dataProvider;
+    }
 }
