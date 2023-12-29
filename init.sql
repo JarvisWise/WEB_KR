@@ -10,8 +10,7 @@ CREATE TABLE blog_user (
     username TEXT,
     email TEXT,
     password TEXT,
-    authKey TEXT,
-    accessToken TEXT
+    image TEXT
 );
 
 --article
@@ -43,7 +42,7 @@ CREATE TABLE topic (
     name TEXT
 );
 
-INSERT INTO blog_user VALUES(1, 'admin', 'admin1@gmail.com', 'admin','test100key','100-token');
-INSERT INTO blog_user VALUES(2, 'admin Demo', 'demo1@gmail.com', 'demo','test101key','101-token');
+INSERT INTO blog_user VALUES(1, 'admin', 'admin1@gmail.com', 'admin','base.jpg');
+INSERT INTO blog_user VALUES(2, 'admin Demo', 'demo1@gmail.com', 'demo','base.jpg');
 SELECT * FROM blog_user;
 commit;

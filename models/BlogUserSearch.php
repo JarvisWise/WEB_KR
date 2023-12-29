@@ -17,7 +17,8 @@ class BlogUserSearch extends BlogUser
     public function rules()
     {
         return [
-            [['id', 'username', 'email', 'password', 'authkey', 'accesstoken'], 'safe'],
+            //[['id', 'username', 'email', 'password', 'authkey', 'accesstoken'], 'safe'],
+            [['id', 'username', 'email', 'password', 'image'], 'safe'],
         ];
     }
 
@@ -59,8 +60,9 @@ class BlogUserSearch extends BlogUser
         $query->andFilterWhere(['ilike', 'username', $this->username])
             ->andFilterWhere(['ilike', 'email', $this->email])
             ->andFilterWhere(['ilike', 'password', $this->password])
-            ->andFilterWhere(['ilike', 'authkey', $this->authkey])
-            ->andFilterWhere(['ilike', 'accesstoken', $this->accesstoken]);
+            ->andFilterWhere(['ilike', 'image', $this->image]);
+            //->andFilterWhere(['ilike', 'authkey', $this->authkey])
+            //->andFilterWhere(['ilike', 'accesstoken', $this->accesstoken]);
 
         return $dataProvider;
     }

@@ -16,8 +16,9 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'username')->textarea(['rows' => 6]) ?>
     <?= $form->field($model, 'email')->textarea(['rows' => 6]) ?>
     <?= $form->field($model, 'password')->textarea(['rows' => 6]) ?>
-    <?= $form->field($model, 'authkey')->textarea(['rows' => 6]) ?>
-    <?= $form->field($model, 'accesstoken')->textarea(['rows' => 6]) ?>
+    <?= $form->field($model, 'image')->textarea(['rows' => 6]) ?>
+    <!--< ?= $form->field($model, 'authkey')->textarea(['rows' => 6]) ?>-->
+    <!--< ?= $form->field($model, 'accesstoken')->textarea(['rows' => 6]) ?>-->
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>

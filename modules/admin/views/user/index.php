@@ -33,8 +33,16 @@ $this->params['breadcrumbs'][] = $this->title;
             'username:ntext',
             'email:ntext',
             'password:ntext',
-            'authkey:ntext',
-            'accesstoken:ntext',
+            //'authkey:ntext',
+            //'image:ntext',
+            [
+                'format' => 'html',
+                'label' => 'Image',
+                'value' => function($data){
+                    return Html::img($data->getImage(), ['width'=>200]);
+                }
+            ],
+            //'accesstoken:ntext',
             [
                 'class' => ActionColumn::className(),
                 'urlCreator' => function ($action, BlogUser $model, $key, $index, $column) {

@@ -19,8 +19,9 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'username') ?>
     <?= $form->field($model, 'email') ?>
     <?= $form->field($model, 'password') ?>
-    <?= $form->field($model, 'authkey') ?>
-    <?= $form->field($model, 'accesstoken') ?>
+    <?= $form->field($model, 'image') ?>
+    <!--< ?= $form->field($model, 'authkey') ?>-->
+    <!--< ?= $form->field($model, 'accesstoken') ?>-->
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>

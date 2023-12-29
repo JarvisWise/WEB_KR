@@ -7,6 +7,9 @@ use app\models\BlogUserSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use app\models\ImageUpload;
+use yii\web\UploadedFile;
+use Yii;
 
 /**
  * BlogUserController implements the CRUD actions for BlogUser model.
@@ -131,5 +134,19 @@ class UserController extends Controller
         }
 
         throw new NotFoundHttpException('The requested page does not exist.');
+    }
+
+
+    public function actionSetImage ($id){
+        $modelUser = new ImageUpload;
+        if (Yii::$app->request->isPost){
+            $user = $this->findModel($id);
+            $file = UploadedFile::getInstance($modelUser,'image');
+
+            if($user->saveImage( $modelUser->uploadFile($file, $user->image))){
+                return $this->redirect(['view', 'id'=>$user->id]);
+            }
+        }
+        return $this->render('image',['model'=>$modelUser]);
     }
 }
