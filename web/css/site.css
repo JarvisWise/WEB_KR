@@ -1,3 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600&display=swap');
+
+html::-webkit-scrollbar{                                            /* scrollbar width */
+    width: .8rem;
+}
+
+html::-webkit-scrollbar-track{                                      /*scrollbar background */
+    background: transparent;
+    background-color: rgba(138,48,127,1);
+}
+
+html::-webkit-scrollbar-thumb{                                      /* scrollbar color and border radius*/
+    background: #ff00d9;
+    border-radius: 5rem;
+}
+
+
+*{
+    font-family: 'Oswald', sans-serif;
+}
+
+#footer {
+    background: rgb(138,48,127);
+    background: linear-gradient(90deg, rgba(138,48,127,1) 0%, rgba(121,9,121,1) 35%, rgba(0,239,255,1) 100%);
+}
+
+.navbar-expand-md{
+    background: rgb(138,48,127);
+    background: linear-gradient(90deg, rgba(138,48,127,1) 0%, rgba(121,9,121,1) 35%, rgba(0,239,255,1) 100%);
+}
+
+.navbar-nav .nav-item .nav-link{
+    font-size: 23px;
+    color: rgba(0, 0, 0, 1);
+    padding: 5px;
+
+}
+
+.navbar-nav .nav-item .nav-link:hover{
+    text-decoration: none;
+    color: rgba(255, 255, 255, 1);
+}
+
+.container .navbar-brand{
+    font-size: 23px;
+    color: #00FFFF;
+}
+
+.container .navbar-brand:hover {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 1);
+}
+
+.list-view{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+[data-key]{
+    flex: 0 1 calc(50% - 30px);
+    background: rgb(249,157,244);
+    background: linear-gradient(90deg, rgba(249,157,244,0.9878326330532213) 0%, rgba(25,125,196,1) 35%, rgba(0,251,255,1) 100%);
+    border: 2px solid fuchsia;
+    border-radius: 10px;
+    overflow: hidden;
+    align-self: stretch;
+    margin: 15px;
+    padding: 10px;
+    font-size: large;
+}
+
+.flex_items{
+    display: flex; /* Establish flex container */
+    flex-direction: column; /* Stack children vertically */
+    justify-content: space-between; /* This will ensure space distribution from top to bottom */
+    height: 100%;
+}
+
+.flex_item_2{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    /*margin: 10px;*/
+    /*background-color: #00FFFF;*/
+}
+
+.button_read_more{
+    background-color: rgba(0,251,255,1);
+}
+
+.button_read_more:hover{
+    background-color: rgba(211,121,202,0.9878326330532213);
+    color: black;
+}
+
+/*#main{*/
+/*    background: url("photo/gradient_raznotsvetnyj_goluboj_187408_1920x1080.jpg");*/
+/*}*/
+
+body{
+    background: rgb(211,121,202);
+    background: linear-gradient(90deg, rgba(211,121,202,0.9878326330532213) 0%, rgba(9,78,121,1) 35%, rgba(0,251,255,1) 100%);
+}
+
+/*кнопка Replay*/
+.comment-form{
+
+}
+
+.form-group{
+    /*background-color: #b02a37;*/
+}
+
+.comment-div-center{
+    /*height: 200px;*/
+}
+
+.flex_items_comments{
+    display: flex; /* Establish flex container */
+    flex-direction: column; /* Stack children vertically */
+    justify-content: space-between; /* This will ensure space distribution from top to bottom */
+    height: 100%;
+    justify-content: flex-start; align-items: start;
+}
+
+
+/*.flex_item_comments2{*/
+/*    display: flex;*/
+/*    align-items: baseline;*/
+/*    justify-content: space-between;*/
+/*    !*margin: 10px;*!*/
+/*    !*background-color: #00FFFF;*!*/
+/*}*/
+
+#header{
+    background-color: #1ABC9C;
+}
+
+.btn-success{
+    background-color: rgba(138,48,127,1);
+}
+
+.btn-success:hover{
+    background-color: rgba(211,121,202,0.9878326330532213);
+}
+
+.form-control{
+    background: rgb(211,121,202);
+    background: linear-gradient(90deg, rgba(0,251,255,1) 0%, rgba(9,78,121,1) 35%, rgba(211,121,202,0.9878326330532213) 100%);
+}
+
+.form-control::-webkit-scrollbar{                                            /* scrollbar width */
+    width: .8rem;
+}
+
+.form-control::-webkit-scrollbar-track{                                      /*scrollbar background */
+    background: transparent;
+    background-color: blanchedalmond;
+}
+
+.form-control::-webkit-scrollbar-thumb{                                      /* scrollbar color and border radius*/
+    background: palevioletred;
+    border-radius: 5rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 main > .container {
     padding: 70px 15px 20px;
 }
@@ -61,7 +239,7 @@ a.desc:after {
 /* align the logout "link" (button in form) of the navbar */
 .nav li > form > button.logout {
     padding-top: 7px;
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(0, 0, 0, 0.75);
 }
 
 @media(max-width:767px) {
@@ -76,7 +254,7 @@ a.desc:after {
 .nav > li > form > button.logout:focus,
 .nav > li > form > button.logout:hover {
     text-decoration: none;
-    color: rgba(255, 255, 255, 0.75);
+    color: rgba(255, 255, 255, 1);
 }
 
 .nav > li > form > button.logout:focus {
