@@ -7,7 +7,7 @@ use app\models\CommentSearch;
 use app\models\Comment;
 use yii\widgets\ListView;
 use yii\widgets\ActiveForm;
-?>  
+?>
 
 <style>
     .div-center {
@@ -15,6 +15,7 @@ use yii\widgets\ActiveForm;
         width: auto;
         display: block;
     }
+
 </style>
 
 <div class="col-lg-9 mb-5 div-center">
@@ -22,15 +23,18 @@ use yii\widgets\ActiveForm;
         <h2 style="display: inline-block;"><?=$model->title;?> (Topic: <?=Topic::getNameById($model->topic_id);?>)</h2>
         <p style="display: inline-block;"><i>Published (<?=BlogUser::getUsernameById($model->user_id);?>): <?=$model->date;?> </i></p>
     </div>
-    <div>
-        <p><?=Html::img($model->getImage(), ['width' => 300]);?> </p>
-        <p><?=$model->description;?> </p>
+    <div style="width: 100%; margin: 0 auto; overflow: hidden;">
+        <div style="display: inline-block; float: left; margin: 0 20px 20px 0;" >
+            <?=Html::img($model->getImage(), ['width' => 300]);?>
+        </div>
+        <p style="font-size: larger"><?=$model->description;?> </p>
     </div>
-    
-    
+
+
+
 </div>
 
-<?php 
+<?php
     $searchModel = new CommentSearch();
     $dataProvider = $searchModel->searchByArticleId(Yii::$app->request->queryParams, $model->id);
 ?>
@@ -38,7 +42,7 @@ use yii\widgets\ActiveForm;
     <?php echo ListView::widget([
         'dataProvider' => $dataProvider,
         'itemView' => '_commentItem',
-        'summary'=>'', 
+        'summary'=>'',
     ]); ?>
 </div>
 
